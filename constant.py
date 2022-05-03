@@ -26,7 +26,4 @@ REDDIT = praw.Reddit(client_id = os.environ['PRAW_ID'],
                     check_for_async = False
                     )
 
-#The channels where the bot can run
-CHANNELS = ["ronaldo-bot"]
-
 BOT_ID = "930296939675811852"
