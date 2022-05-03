@@ -287,6 +287,15 @@ class Economic(commands.Cog):
     return
 
 
+  @commands.command(aliases = ["joblis", "jobl", "joblist", "joblists", "listjob"])
+  async def listjobs(self, ctx):
+    """
+    This command list all the jobs and their salary
+    """
+    await self.send_jobs_embed(ctx)
+    return
+
+
   @commands.command(pass_context = True)
   @commands.cooldown(1, 60*60*12, commands.BucketType.user)
   async def work(self, ctx):
