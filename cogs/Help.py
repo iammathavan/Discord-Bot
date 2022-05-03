@@ -37,7 +37,7 @@ class Help(commands.Cog):
     )
     embed.add_field(
       name = "Economic commands",
-      value = "balance, beg, daily, deposit, steal, send, rob, job, work, inventory, dig, sell, leaderboard",
+      value = "balance, beg, daily, deposit, steal, send, rob, job, listjob, work, inventory, dig, sell, leaderboard",
       inline = True
     )
     await ctx.channel.send(embed=embed)
@@ -367,6 +367,21 @@ class Help(commands.Cog):
     embed = discord.Embed(
       title = "$job <position>",
       description = "Apply for a job position",
+      color = discord.Colour.blurple()
+    )
+    embed.set_thumbnail(url="https://cdn0.iconfinder.com/data/icons/cosmo-symbols/40/help_1-512.png")
+    await ctx.channel.send(embed=embed)
+    return
+
+
+  @help.command(aliases = ["joblis", "jobl", "joblist", "joblists", "listjob"])
+  async def listjobs(self, ctx):
+    """
+    Extended command for help
+    """
+    embed = discord.Embed(
+      title = "$job",
+      description = "List all of the jobs",
       color = discord.Colour.blurple()
     )
     embed.set_thumbnail(url="https://cdn0.iconfinder.com/data/icons/cosmo-symbols/40/help_1-512.png")
