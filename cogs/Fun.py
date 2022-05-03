@@ -12,7 +12,7 @@ from giphy_client.rest import ApiException
 import requests
 import json
 
-from constant import (CHANNELS, MOODS, GIPHY_API_KEY, REDDIT)
+from constant import (MOODS, GIPHY_API_KEY, REDDIT)
 
 class Fun(commands.Cog):
   def __init__(self, bot):
@@ -57,8 +57,7 @@ class Fun(commands.Cog):
     I am currently feeling {mood}!
     """
     mood = random.choice(MOODS)
-    if str(ctx.channel) in CHANNELS:
-      await ctx.channel.send(f"I am currently feeling {mood}!")
+    await ctx.channel.send(f"I am currently feeling {mood}!")
     return
 
 
@@ -70,8 +69,7 @@ class Fun(commands.Cog):
     >>>$goal
     I just scored a beautiful goal... Suiiiiiiiiiiiiiiiiiii!!!
     """
-    if str(ctx.channel) in CHANNELS:
-      await ctx.channel.send("I just scored a beautiful goal... Suiiiiiiiiiiiiiiiiiii!!!")
+    await ctx.channel.send("I just scored a beautiful goal... Suiiiiiiiiiiiiiiiiiii!!!")
     return
 
 
@@ -219,6 +217,22 @@ class Fun(commands.Cog):
       await ctx.channel.send(ctx.author.avatar_url)
       return
     await ctx.channel.send(member.avatar_url)
+    return
+
+
+  @commands.command()
+  async def iq(self, ctx):
+    """
+    This command send an embed of the user's IQ randomly.
+    """
+    the_iq = random.randrange(0,302)
+    embed = discord.Embed(
+      title = f"{ctx.author.name}'s IQ 🧠",
+      description = f"**{the_iq}**",
+      color = discord.Colour.blurple()
+    )
+    embed.set_thumbnail(url=ctx.author.avatar_url)
+    await ctx.channel.send(embed=embed)
     return
 
 
