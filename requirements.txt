@@ -1,0 +1,5 @@
+requests
+numpy
+discord
+giphy_client
+praw
