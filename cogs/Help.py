@@ -32,7 +32,7 @@ class Help(commands.Cog):
     )
     embed.add_field(
       name = "Fun commands",
-      value = "hello, mood, goal, inspire, stat, gif, meme, info, quote, pfp",
+      value = "hello, mood, goal, inspire, stat, gif, meme, info, quote, pfp, iq",
       inline = True
     )
     embed.add_field(
@@ -457,6 +457,21 @@ class Help(commands.Cog):
     embed = discord.Embed(
       title = "$leaderboard",
       description = "List the top richest 10 or less users in the server",
+      color = discord.Colour.blurple()
+    )
+    embed.set_thumbnail(url="https://cdn0.iconfinder.com/data/icons/cosmo-symbols/40/help_1-512.png")
+    await ctx.channel.send(embed=embed)
+    return
+
+
+  @help.command()
+  async def iq(self, ctx):
+    """
+    Extended command for help
+    """
+    embed = discord.Embed(
+      title = "$iq",
+      description = "Randomly give an IQ score for the user who invoke the command",
       color = discord.Colour.blurple()
     )
     embed.set_thumbnail(url="https://cdn0.iconfinder.com/data/icons/cosmo-symbols/40/help_1-512.png")
