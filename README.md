@@ -31,7 +31,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Few more changes
 
-Also, change some variables in the constant.py file
+Also, change a variable in the constant.py file
 
 `BOT_ID` = Change it to your own bot's ID
 
