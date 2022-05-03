@@ -14,7 +14,7 @@ from constant import BOT_TOKEN
 
 intents = discord.Intents.all()
 #The bot's prefix and the initialising the bot
-bot = commands.Bot(command_prefix = "$", intents = intents)
+bot = commands.Bot(command_prefix = ["$", "."], intents = intents, case_insensitive = True)
 
 
 #Remove the default help command
