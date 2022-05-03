@@ -35,8 +35,6 @@ Also, change some variables in the constant.py file
 
 `BOT_ID` = Change it to your own bot's ID
 
-`CHANNELS` = Add or change channels you want the bot to run in
-
 Then feel free to edit the bank.json file, and change the ID to your own bot.
 ## Screenshot
 
