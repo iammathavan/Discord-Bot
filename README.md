@@ -40,7 +40,7 @@ Also, change some variables in the constant.py file
 Then feel free to edit the bank.json file, and change the ID to your own bot.
 ## Screenshot
 
-(![Screenshot 2022-05-03 145320](https://user-images.githubusercontent.com/78320266/166525503-bc146ab0-844e-4432-ba13-7288f922b79b.png))
+![Screenshot 2022-05-03 145320](https://user-images.githubusercontent.com/78320266/166525503-bc146ab0-844e-4432-ba13-7288f922b79b.png)
 
 ## Running the Bot
 
