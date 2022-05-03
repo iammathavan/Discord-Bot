@@ -43,6 +43,14 @@ To run this project, you will need to add the following environment variables to
 `REDDIT_PASS` = Your Reddit password
 
 
+
+## Few more changes
+
+Also, change some variables in the constant.py file
+
+`BOT_ID` = Change it to your own bot's ID
+
+`CHANNELS` = Add or change channels you want the bot to run in
 ## Running the Bot
 
 To run the bot
