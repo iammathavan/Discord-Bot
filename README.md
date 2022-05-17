@@ -71,7 +71,7 @@ Feel free to invite my bot to your own server and test it. If you have any sugge
 ## NOTE
 
 ```
-The BOT stores the users' economic data in a JSON file, even though it is alright for a smaller project. I strongly suggest using a database to run the BOT on multiple servers. 
+The BOT stores the users' economic data in a JSON file, even though it is alright for a smaller project. I strongly suggest using a database to store extensive data while running the Bot on multiple servers. 
 ```
 
 [INVITE the bot](https://discord.com/api/oauth2/authorize?client_id=930296939675811852&permissions=8&scope=bot)
