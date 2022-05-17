@@ -439,30 +439,28 @@ class Economic(commands.Cog):
     await self.open_bank_account(ctx.author)
     users = await self.get_users()
     leader_board = {}
-    richest = []
     for key, val in users.items():
       user_id = int(key)
       total_money = val["Wallet"] + val["Bank"]
-      richest.append(total_money)
-      leader_board[total_money] = user_id
-    richest = sorted(richest, reverse=True)
+      leader_board[user_id] = total_money
+    leader_board = sorted(leader_board.items(), key=operator.itemgetter(1), reverse=True)
     embed = discord.Embed(
       title = "Top richest users in the server",
       color = discord.Color.from_rgb(3, 252, 198)
     )
-    i = 0
-    for rich in richest:
-      if i < 10:
-        user_id = leader_board[rich]
+    ten = 0
+    for i in range(len(leader_board)):
+      if 10 > ten:
+        user_id = leader_board[i][0]
         member = ctx.guild.get_member(int(user_id))
         if member != None:
-          name_field = f"{i+1}. " + str(member.name) + "  =  " + str(rich) + " 🪙"
+          name_field = f"{i+1}. " + str(member.name) + "  =  " + str(leader_board[i][1]) + " 🪙"
           embed.add_field(
             name = name_field,
             value = '\u200b',
             inline = False
           )
-          i += 1
+          ten += 1
     await ctx.channel.send(embed=embed)
     return
 
