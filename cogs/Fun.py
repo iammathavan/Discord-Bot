@@ -236,5 +236,5 @@ class Fun(commands.Cog):
     return
 
 
-def setup(bot):
-  bot.add_cog(Fun(bot))
+async def setup(bot):
+  await bot.add_cog(Fun(bot))
