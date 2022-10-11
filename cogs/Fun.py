@@ -214,9 +214,9 @@ class Fun(commands.Cog):
     This will trigger the bot to respond with the user specified person's profile picture. If nothing specified, then return the sender's profile picture.
     """
     if member == None:
-      await ctx.channel.send(ctx.author.avatar_url)
+      await ctx.channel.send(ctx.author.display_avatar.url)
       return
-    await ctx.channel.send(member.avatar_url)
+    await ctx.channel.send(member.display_avatar.url)
     return
 
 
