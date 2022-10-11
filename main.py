@@ -62,7 +62,7 @@ extensions = ['cogs.Fun', 'cogs.Admin', 'cogs.Economic', 'cogs.Help']
 
 if __name__ == '__main__':
   for ext in extensions:
-    await bot.load_extension(ext)
+    bot.load_extension(ext)
 
 
 
