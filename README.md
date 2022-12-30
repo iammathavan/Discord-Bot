@@ -76,7 +76,6 @@ The BOT stores the users' economic data in a JSON file, even though it is alrigh
 
 [INVITE the bot](https://discord.com/api/oauth2/authorize?client_id=930296939675811852&permissions=8&scope=bot)
 ## 🔗 Links
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/AurthurMorgan)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mathavanp/)
 [![instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/iammathavan/)
 
