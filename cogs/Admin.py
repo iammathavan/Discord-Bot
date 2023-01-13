@@ -1,6 +1,5 @@
 """
 This file holds all the administrator commands.
-
 Copyright (c) 2022 Mathavan Pirathaban
 """
 
@@ -55,7 +54,7 @@ class Admin(commands.Cog):
       description = "Reason: " + str(reason),
       color = discord.Color.from_rgb(240, 2, 121)
     )
-    embed.set_thumbnail(url=member.avatar_url)
+    embed.set_thumbnail(url=member.display_avatar.url)
     await ctx.guild.kick(member)
     await ctx.channel.send(embed=embed)
     return
@@ -74,7 +73,7 @@ class Admin(commands.Cog):
       description = "Reason: " + str(reason),
       color = discord.Color.from_rgb(255, 0, 47)
     )
-    embed.set_thumbnail(url=member.avatar_url)
+    embed.set_thumbnail(url=member.display_avatar.url)
     await ctx.guild.ban(member)
     await ctx.channel.send(embed=embed)
     return
@@ -108,5 +107,5 @@ class Admin(commands.Cog):
 
 
 
-def setup(bot):
-  bot.add_cog(Admin(bot))
+async def setup(bot):
+  await bot.add_cog(Admin(bot))
