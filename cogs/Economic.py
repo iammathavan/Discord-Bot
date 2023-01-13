@@ -1,6 +1,5 @@
 """
 This file holds all the commands for the Economic/Currency system.
-
 Copyright (c) 2022 Mathavan Pirathaban
 """
 
@@ -8,6 +7,7 @@ from discord.ext import commands
 import json
 import discord
 import random
+import operator
 from constant import BOT_ID
 
 class Economic(commands.Cog):
@@ -103,7 +103,7 @@ class Economic(commands.Cog):
       title = f"{ctx.author.name}'s wealth information.",
       color = discord.Color.from_rgb(40, 173, 51)
     )
-    embed.set_thumbnail(url = ctx.author.avatar_url)
+    embed.set_thumbnail(url = ctx.author.display_avatar.url)
     embed.add_field(
       name = f"👛 Wallet balance",
       value = wallet_amount,
@@ -339,7 +339,7 @@ class Economic(commands.Cog):
       title = f"{ctx.author.name}'s inventory",
       color = discord.Color.from_rgb(242, 145, 255)
     )
-    embed.set_thumbnail(url = ctx.author.avatar_url)
+    embed.set_thumbnail(url = ctx.author.display_avatar.url)
     for key, val in users[str(ctx.author.id)]["Inventory"].items():
       if val != 0:
         item_name = items[key]["Name"] + " " + items[key]["Emoji"] + "  x " + str(val)
@@ -465,5 +465,5 @@ class Economic(commands.Cog):
     return
 
 
-def setup(bot):
-  bot.add_cog(Economic(bot))
+async def setup(bot):
+  await bot.add_cog(Economic(bot))
