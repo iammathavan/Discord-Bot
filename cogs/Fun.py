@@ -1,6 +1,5 @@
 """
 This file holds all the fun user friendly commands.
-
 Copyright (c) 2022 Mathavan Pirathaban
 """
 
@@ -40,7 +39,6 @@ class Fun(commands.Cog):
   async def hello(self, ctx):
     """
     This will trigger the bot to greet the User.
-
     >>>$hello
     Hello there, {user}!
     """
@@ -52,7 +50,6 @@ class Fun(commands.Cog):
   async def mood(self, ctx):
     """
     This will trigger the bot to express it's mood to the user.
-
     >>>$mood
     I am currently feeling {mood}!
     """
@@ -65,7 +62,6 @@ class Fun(commands.Cog):
   async def goal(self, ctx):
     """
     This will trigger the bot to respond to how it express after scoring a goal.
-
     >>>$goal
     I just scored a beautiful goal... Suiiiiiiiiiiiiiiiiiii!!!
     """
@@ -77,7 +73,6 @@ class Fun(commands.Cog):
   async def inspire(self, ctx):
     """
     This will trigger the bot to respond with a Cristiano Ronaldo quote back to the User.
-
     >>>$inspire
     >>>{Quote from Cristiano Ronaldo}
     """
@@ -90,7 +85,6 @@ class Fun(commands.Cog):
   async def stat(self, ctx):
     """
     This will trigger the bot to respond with the statistics of the server.
-
     >>>$stat
     {stats in embed}
     """
@@ -100,7 +94,7 @@ class Fun(commands.Cog):
     id = str(ctx.guild.id)
     region = str(ctx.guild.region)
     members = str(ctx.guild.member_count)
-    icon = str(ctx.guild.icon_url)
+    icon = str(ctx.guild.icon.url)
     embed = discord.Embed(
       title=name + " Server Info:",
       description=description,
@@ -119,7 +113,6 @@ class Fun(commands.Cog):
   async def gif(self, ctx, *, q="Cristiano Ronaldo"):
     """
     This will trigger the bot to respond with a gif randomly from Giphy website. By default the bot will send gifs of Cristiano Ronaldo, however the user can type whatever keyword along with it to get some gifs related to the keyword.
-
     >>>$gif {keyword}
     {gif about the keyword}
     """
@@ -138,7 +131,6 @@ class Fun(commands.Cog):
   async def meme(self, ctx):
     """
     This will trigger the bot to respond to the user with a random trending meme from the subreddit meme.
-
     >>>$meme
     {meme from r/meme}
     """
@@ -155,7 +147,6 @@ class Fun(commands.Cog):
   async def info(self, ctx):
     """
     This will trigger the bot to respond to the user with the information about the user itself.
-
     >>>$info
     {info about the user}
     """
@@ -170,7 +161,7 @@ class Fun(commands.Cog):
       is_bot = "Bot"
     else:
       is_bot = "Human"
-    icon = str(user.avatar_url)
+    icon = str(user.display_avatar.url)
     embed = discord.Embed(
       title = user.display_name,
       description = "User Info",
@@ -192,7 +183,6 @@ class Fun(commands.Cog):
   async def quote(self, ctx):
     """
     This will trigger the bot to respond to the user with a random quote using zen quote API.
-
     >>>$quote
     {quote embedded}
     """
@@ -214,9 +204,9 @@ class Fun(commands.Cog):
     This will trigger the bot to respond with the user specified person's profile picture. If nothing specified, then return the sender's profile picture.
     """
     if member == None:
-      await ctx.channel.send(ctx.author.avatar_url)
+      await ctx.channel.send(ctx.author.display_avatar.url)
       return
-    await ctx.channel.send(member.avatar_url)
+    await ctx.channel.send(member.display_avatar.url)
     return
 
 
@@ -231,10 +221,10 @@ class Fun(commands.Cog):
       description = f"**{the_iq}**",
       color = discord.Colour.blurple()
     )
-    embed.set_thumbnail(url=ctx.author.avatar_url)
+    embed.set_thumbnail(url=ctx.author.display_avatar.url)
     await ctx.channel.send(embed=embed)
     return
 
 
-def setup(bot):
-  bot.add_cog(Fun(bot))
+async def setup(bot):
+  await bot.add_cog(Fun(bot))
