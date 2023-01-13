@@ -2,7 +2,6 @@
 This is the main file and it runs  the code.
 It have two functions that prints to the console if the bot is running and the
 error handling on command error.
-
 Copyright (c) 2022 Mathavan P
 """
 
@@ -53,16 +52,16 @@ async def on_ready():
   """
   Executes when the bot is ready online.
   """
+  extensions = ['cogs.Fun', 'cogs.Admin', 'cogs.Economic', 'cogs.Help']
+
+  if __name__ == '__main__':
+    for ext in extensions:
+      await bot.load_extension(ext)
   print("The bot is ONLINE")
   #Set the bot's activity
   await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="Football"))
   return
 
-extensions = ['cogs.Fun', 'cogs.Admin', 'cogs.Economic', 'cogs.Help']
-
-if __name__ == '__main__':
-  for ext in extensions:
-    bot.load_extension(ext)
 
 
 
