@@ -1,5 +1,5 @@
 requests
 numpy
-discord
+discord==1.7.3
 giphy_client
 praw
